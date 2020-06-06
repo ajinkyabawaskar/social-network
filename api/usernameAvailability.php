@@ -21,7 +21,7 @@ function response($response_data)
 function getAvailability()
 {
     if (!empty($_GET['username'])) {
-        $config = parse_ini_file('../database/config.ini');
+        $config = parse_ini_file('../database/db_config.ini');
         try {
             // establish a new database connection
             $connection = new PDO('mysql:host=' . $config["server"] . ';dbname=' . $config["database"], $config["username"], $config["password"]);

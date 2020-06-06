@@ -57,7 +57,7 @@ function authenticateUser()
 
 function doLogIn()
 {
-    $config = parse_ini_file('../database/config.ini');
+    $config = parse_ini_file('../database/db_config.ini');
     try {
         // establish a new database connection
         $connection = new PDO('mysql:host=' . $config["server"] . ';dbname=' . $config["database"], $config["username"], $config["password"]);
@@ -105,7 +105,7 @@ function doLogIn()
 
 function doSignUp()
 {
-    $config = parse_ini_file('../database/config.ini');
+    $config = parse_ini_file('../database/db_config.ini');
     try {
         // establish PDO connection
         $connection = new PDO('mysql:host=' . $config["server"] . ';dbname=' . $config["database"], $config["username"], $config["password"]);
