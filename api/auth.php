@@ -82,7 +82,7 @@ function doLogIn()
             $passwordVerified = password_verify($_POST['password'], $result['password']);
             if ($passwordVerified) {
                 // setCookie to validate the session on client side, expires after one day
-                setcookie("sessionSecret", generateRandomString(100), time() + (86400), "/", isset($_SERVER["HTTPS"]));
+                setcookie("sessionSecret", generateRandomString(100), time() + (86400), "/");
                 return array(
                     "status" => true,
                     "message" => "Password Matches!",
